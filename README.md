@@ -34,12 +34,6 @@ A particle-based fluid simulation using SPH to approximate pressure, viscosity, 
 
 ![Fluid simulation demo](images/fluidsim.gif)
 
-## Demo Video
-
-A full walkthrough of all the simulations in action:
-
-https://github.com/user-attachments/assets/demo-video-placeholder
-
 ## Note
 
 The following project was completed within a limited timeframe for a master's-level course. The core of the program is written in QT and is a bit outdated, so in the future I'd like to completely rewrite it using DearImGUI, since I'm now much more familiar with it.
