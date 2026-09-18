@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Computer Animation: Physical Simulations</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QGroupBox" name="controlsSim">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>Simulation controls</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="2" column="0">
+          <widget class="QPushButton" name="btnPause">
+           <property name="text">
+            <string>Pause</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Time step:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QDoubleSpinBox" name="timestep">
+           <property name="decimals">
+            <number>6</number>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+           <property name="value">
+            <double>0.050000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QPushButton" name="btnReset">
+           <property name="text">
+            <string>Restart</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="btnSimloop">
+           <property name="text">
+            <string>Simulate!</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="btnSimstep">
+           <property name="text">
+            <string>1 step</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="controlsScene">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="title">
+         <string>Scene settings</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>No scene loaded</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="GLWidget" name="openGLWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuScene">
+    <property name="title">
+     <string>Scene</string>
+    </property>
+    <addaction name="actionSceneProjectiles"/>
+    <addaction name="actionSceneFountain"/>
+    <addaction name="actionSceneRope"/>
+    <addaction name="actionSceneCloth"/>
+    <addaction name="actionSceneTestIntegrators"/>
+    <addaction name="actionSceneTestColliders"/>
+    <addaction name="actionSceneNBody"/>
+    <addaction name="actionFluidSim"/>
+   </widget>
+   <widget class="QMenu" name="menuCamera">
+    <property name="title">
+     <string>Camera</string>
+    </property>
+    <addaction name="actionCameraReset"/>
+    <addaction name="actionCameraX"/>
+    <addaction name="actionCameraY"/>
+    <addaction name="actionCameraZ"/>
+   </widget>
+   <addaction name="menuScene"/>
+   <addaction name="menuCamera"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSceneFountain">
+   <property name="text">
+    <string>Fountain</string>
+   </property>
+  </action>
+  <action name="actionCameraReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionSceneProjectiles">
+   <property name="text">
+    <string>Projectiles</string>
+   </property>
+  </action>
+  <action name="actionCameraX">
+   <property name="text">
+    <string>Align +X</string>
+   </property>
+  </action>
+  <action name="actionCameraY">
+   <property name="text">
+    <string>Align +Y</string>
+   </property>
+  </action>
+  <action name="actionCameraZ">
+   <property name="text">
+    <string>Align +Z</string>
+   </property>
+  </action>
+  <action name="actionSceneCloth">
+   <property name="text">
+    <string>Cloth</string>
+   </property>
+  </action>
+  <action name="actionSceneTestIntegrators">
+   <property name="text">
+    <string>Test: integrators</string>
+   </property>
+  </action>
+  <action name="actionSceneTestColliders">
+   <property name="text">
+    <string>Test: colliders</string>
+   </property>
+  </action>
+  <action name="actionSceneRope">
+   <property name="text">
+    <string>Elastic rope</string>
+   </property>
+  </action>
+  <action name="actionSceneNBody">
+   <property name="text">
+    <string>SceneNbody</string>
+   </property>
+  </action>
+  <action name="actionFluidSim">
+   <property name="text">
+    <string>Fluid Simulator</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GLWidget</class>
+   <extends>QOpenGLWidget</extends>
+   <header>code/glwidget.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
